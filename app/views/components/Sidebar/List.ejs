@@ -1,0 +1,41 @@
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+    <div class="position-sticky pt-3 sidebar-sticky">
+      <ul class="nav flex-column" id="myTab" role="tablist">
+
+        <li class="nav-item"></li>
+            <a class="nav-link actived" type="button" id="dashboard-tab" data-tab="dashboard" data-bs-toggle="tab" data-bs-target="#dashboard-tab-pane" role="tab" aria-controls="dashboard-tab-pane" aria-selected="true">
+
+              <span data-feather="home" class="align-text-bottom"></span>
+              Dashboard
+            </a>
+        </li>
+
+        <%-include('Item', {
+          modulo:'Atendimento', 
+          icon:'hand-platter',
+          tabName:'atendimento'
+        })%>
+        <%-include('Item', {
+          modulo:'Criativo', 
+          icon:'palette',
+          tabName:'criativo'
+        })%>
+        <%-include('Item', {
+          modulo:'Relatórios', 
+          icon:'chart-no-axes-combined',
+          tabName:'relatorios'
+        })%>
+        <%-include('Item', {
+          modulo:'Cadastros', 
+          icon:'sliders-vertical',
+          tabName:'cadastros'
+        })%>
+        <%-include('Item', {
+          modulo:'Configurações', 
+          icon:'settings',
+          tabName:'configuracoes'
+        })%>
+      </ul>
+      <%-include('Divider')%>
+    </div>
+</nav>
