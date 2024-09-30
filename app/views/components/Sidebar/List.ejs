@@ -3,7 +3,7 @@
       <ul class="nav flex-column" id="myTab" role="tablist">
 
         <li class="nav-item"></li>
-            <a class="nav-link actived" type="button" id="pills-dashboard-tab" data-bs-toggle="pill" data-bs-target="#pills-dashboard" role="tab" aria-controls="pills-dashboard" aria-selected="true">
+            <a class="nav-link nav-used actived" type="button" data-tab="Dashboard">
 
               <span data-feather="home" class="align-text-bottom"></span>
               Dashboard
@@ -13,27 +13,27 @@
         <%-include('Item', {
           modulo:'Atendimento', 
           icon:'hand-platter',
-          tabName:'atendimento'
+          tabName:'Atendimento'
         })%>
         <%-include('Item', {
           modulo:'Criativo', 
           icon:'palette',
-          tabName:'criativo'
+          tabName:'Criativo'
         })%>
         <%-include('Item', {
           modulo:'Relatórios', 
           icon:'chart-no-axes-combined',
-          tabName:'relatorios'
+          tabName:'Relatorios'
         })%>
         <%-include('Item', {
           modulo:'Cadastros', 
           icon:'sliders-vertical',
-          tabName:'cadastros'
+          tabName:'Cadastros'
         })%>
         <%-include('Item', {
           modulo:'Configurações', 
           icon:'settings',
-          tabName:'configuracoes'
+          tabName:'Configuracoes'
         })%>
       </ul>
       <%-include('Divider')%>

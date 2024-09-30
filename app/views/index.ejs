@@ -8,13 +8,14 @@
     <meta name="generator" content="Hugo 0.104.2">
     <title>Dashboard Traffic · v1.0</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KE6pWccbHEE0PA2OS9nMyVcfO6eQbHo4UgWbr9goa5lG6qZCksO6Po6ZEpG5ScDk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.7/css/dataTables.dataTables.css" />
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
+    <link href="css/datatable.css" rel="stylesheet">
   </head>
   <body>
     
@@ -26,7 +27,7 @@
 
         <%-include('components/Sidebar/List')%>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-          <%-include('components/Tabs/Tab')%>
+          <%-include('components/Main/Main')%>
         </main>
         
       
@@ -34,14 +35,58 @@
       </div>
     </div>
 
-
-    <script src="js/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/2.1.7/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.1.7/js/dataTables.bootstrap5.js"></script>
+    <script src="js/dashboard.js"></script>
+
+    <script type="module">
+      import { sidebarReaction } from './js/module.js';
+
+      sidebarReaction()
+    </script>
     <script>
       lucide.createIcons();
+      new DataTable('#funcTable', {
+        paging: false
+      });
+      new DataTable('#atendimentoTable', {
+        layout: {
+          topStart: null,
+          bottom: 'paging',
+          bottomStart: null,
+          bottomEnd: null,
+        },
+        paging: false,
+        initComplete: function () {
+          this.api()
+              .columns()
+              .every(function () {
+                  let column = this;
+                  let title = column.footer().textContent;
+   
+                  // Create input element
+                  let input = document.createElement('input');
+                  input.placeholder = title;
+                  column.footer().replaceChildren(input);
+   
+                  // Event listener for user input
+                  input.addEventListener('keyup', () => {
+                      if (column.search() !== this.value) {
+                          column.search(input.value).draw();
+                      }
+                  });
+              });
+        }
+      });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
-    <script src="js/dashboard.js"></script>
   </body>
 </html>

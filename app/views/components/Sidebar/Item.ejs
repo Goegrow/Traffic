@@ -1,7 +1,9 @@
 <li class="nav-item" role="presentation">
-    <a class="nav-link" type="button" id="pills-<%=tabName%>-tab" data-pill="<%=tabName%>" data-bs-toggle="pill" data-bs-target="#pills-<%=tabName%>" role="tab" aria-controls="pills-<%=tabName%>" aria-selected="true">
-
-    <%-include('../LucideIcons/Icons', {name: icon})%>
+  <a class="nav-link nav-used" type="button" data-tab="<%=tabName%>">
+    <%-include('../LucideIcons/Icons', {
+      name:icon, 
+      class:"align-text-bottom lucide"
+    })%>
     <%=modulo%>
   </a>
 </li>
