@@ -8,7 +8,7 @@
     <meta name="generator" content="Hugo 0.104.2">
     <title>Dashboard Traffic · v1.0</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KE6pWccbHEE0PA2OS9nMyVcfO6eQbHo4UgWbr9goa5lG6qZCksO6Po6ZEpG5ScDk" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.7/css/dataTables.dataTables.css" />
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -54,9 +54,14 @@
       sidebarReaction()
     </script>
     <script>
+
       lucide.createIcons();
       new DataTable('#funcTable', {
-        paging: false
+        paging: false,
+        layout: {
+          topStart: null,
+          topEnd: null,
+        }
       });
       new DataTable('#atendimentoTable', {
         layout: {
@@ -67,26 +72,6 @@
           bottomEnd: null,
         },
         paging: false,
-        initComplete: function () {
-          this.api()
-              .columns()
-              .every(function () {
-                  let column = this;
-                  let title = column.footer().textContent;
-   
-                  // Create input element
-                  let input = document.createElement('input');
-                  input.placeholder = title;
-                  column.footer().replaceChildren(input);
-   
-                  // Event listener for user input
-                  input.addEventListener('keyup', () => {
-                      if (column.search() !== this.value) {
-                          column.search(input.value).draw();
-                      }
-                  });
-              });
-        }
       });
     </script>
   </body>
