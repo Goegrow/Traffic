@@ -1,17 +1,16 @@
 <div class="table-responsive-xxl">
-    <table class="table">
+    <table class="table display border">
         <thead>
             <tr>
                 <th>Data e hora</th>
                 <th>Atendente</th>
                 <th>Cliente</th>                        
-                <th>Job</th>
+                <th>Tarefa</th>
                 <th>Categoria</th>
                 <th>Tipo</th>            
-                <th>Status</th>            
+                <th>Tempo</th>            
                 <th>Prazo</th>
-                <th>Tempo</th>
-                <th>Ações</th>
+                <th style="min-width: 230px;">Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -22,9 +21,12 @@
                 <td>Alteração Outubro Rosa</td> 
                 <td>Criação</td>
                 <td>Identidade Visual</td>
-                <td><span class="badge text-bg-info">Em andamento</span></td> 
+                <td>
+                    <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width: 95%">55min</div>
+                    </div>
+                </td>
                 <td>Até 12:00</td>
-                <td>1:00</td>
                 <td><%-include('../Buttons/GroupAcoesCriativo')%></td>
             </tr>
             <tr class="table-danger">
@@ -34,9 +36,12 @@
                 <td>Alteração Outubro Rosa</td> 
                 <td>Criação</td>
                 <td>Identidade Visual</td>
-                <td><span class="badge text-bg-success">Feito</span></td> 
+                <td>
+                    <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-danger" style="width: 75%">45min</div>
+                    </div>
+                </td>
                 <td>Até 12:00</td>
-                <td>1:00</td>
                 <td><%-include('../Buttons/GroupAcoesCriativo')%></td>
             </tr>
             <tr class="table-warning">
@@ -46,9 +51,12 @@
                 <td>Alteração Outubro Rosa</td> 
                 <td>Criação</td>
                 <td>Identidade Visual</td>
-                <td><span class="badge text-bg-primary">Atribuído</span></td> 
+                <td>
+                    <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-warning" style="width: 65%">35min</div>
+                    </div>
+                </td>
                 <td>Até 12:00</td>
-                <td>1:00</td>
                 <td><%-include('../Buttons/GroupAcoesCriativo')%></td>
             </tr>
             <tr class="table-success">
@@ -58,9 +66,27 @@
                 <td>Alteração Outubro Rosa</td> 
                 <td>Criação</td>
                 <td>Identidade Visual</td>
-                <td><span class="badge text-bg-danger">Atrasado</span></td> 
+                <td>
+                    <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-success" style="width: 25%">15min</div>
+                    </div>
+                </td>
                 <td>Até 12:00</td>
-                <td>1:00</td>
+                <td><%-include('../Buttons/GroupAcoesCriativo')%></td>
+            </tr>
+            <tr class="table-primary">
+                <td>30/05/2025 10:30</td>
+                <td>Atendente 1</td>
+                <td>Cerradinho Energia</td>
+                <td>Alteração Outubro Rosa</td> 
+                <td>Criação</td>
+                <td>Identidade Visual</td>
+                <td>
+                    <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-primary" style="width: 50%">15min</div>
+                    </div>
+                </td>
+                <td>Até 12:00</td>
                 <td><%-include('../Buttons/GroupAcoesCriativo')%></td>
             </tr>
             <tr>
@@ -70,9 +96,8 @@
                 <td>Alteração Outubro Rosa</td> 
                 <td>Criação</td>
                 <td>Identidade Visual</td>
-                <td><span class="badge text-bg-info">Em andamento</span></td> 
+                <td><span class="badge text-bg-secondary">Não Atribuído</span></td> 
                 <td>Até 12:00</td>
-                <td>1:00</td>
                 <td><%-include('../Buttons/GroupAcoesCriativo')%></td>
             </tr>
             
@@ -84,8 +109,7 @@
                 <th>Cliente</th>                        
                 <th>Job</th>
                 <th>Categoria</th>
-                <th>Tipo</th>            
-                <th>Status</th>            
+                <th>Tipo</th>              
                 <th>Prazo</th>
                 <th>Tempo</th>
                 <th>Ações</th>

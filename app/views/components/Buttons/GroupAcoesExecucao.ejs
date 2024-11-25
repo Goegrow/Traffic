@@ -5,10 +5,10 @@
         data-bs-toggle="tooltip" 
         data-bs-placement="top"
         data-bs-custom-class="custom-tooltip"
-        data-bs-title="Atribuir Tarefa"
+        data-bs-title="Aceitar Tarefa"
     >
         <%-include('../LucideIcons/Icons', {
-            name:"image-plus", 
+            name:"grid-2x2-check", 
             class:"align-text-bottom lucide position-absolute top-50 start-50 translate-middle"
           })%>        
     </button>
@@ -18,10 +18,11 @@
         data-bs-toggle="tooltip" 
         data-bs-placement="top"
         data-bs-custom-class="custom-tooltip"
-        data-bs-title="Alterar Status"
+        data-bs-title="Classificar Tarefa"
+        disabled
     >
         <%-include('../LucideIcons/Icons', {
-            name:"file-clock", 
+            name:"star", 
             class:"align-text-bottom lucide position-absolute top-50 start-50 translate-middle"
           })%> 
     </button>
@@ -31,10 +32,11 @@
         data-bs-toggle="tooltip" 
         data-bs-placement="top"
         data-bs-custom-class="custom-tooltip"
-        data-bs-title="Ver Observação"
+        data-bs-title="Reabrir Tarefa"
+        disabled
     >
         <%-include('../LucideIcons/Icons', {
-            name:"binoculars", 
+            name:"package-open", 
             class:"align-text-bottom lucide position-absolute top-50 start-50 translate-middle"
           })%> 
     </button>
@@ -44,23 +46,11 @@
         data-bs-toggle="tooltip" 
         data-bs-placement="top"
         data-bs-custom-class="custom-tooltip"
-        data-bs-title="Pausar Tarefa"
+        data-bs-title="Encerrar Tarefa"
+        disabled
     >
         <%-include('../LucideIcons/Icons', {
-            name:"circle-pause", 
-            class:"align-text-bottom lucide position-absolute top-50 start-50 translate-middle"
-          })%> 
-    </button>
-    <button 
-        type="button" 
-        class="btn btn-secondary btn-sm py-1 px-2"
-        data-bs-toggle="tooltip" 
-        data-bs-placement="top"
-        data-bs-custom-class="custom-tooltip"
-        data-bs-title="Concluir Tarefa"
-    >
-        <%-include('../LucideIcons/Icons', {
-            name:"grid-2x2-check", 
+            name:"bookmark-check", 
             class:"align-text-bottom lucide position-absolute top-50 start-50 translate-middle"
           })%> 
     </button>
